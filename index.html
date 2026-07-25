@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小池直之 | Naoyuki Koike — 微分幾何学</title>
+<meta name="description" content="小池直之（Naoyuki Koike）の公式ホームページ。微分幾何学・位相幾何学・幾何解析学、特に対称空間内の部分多様体論と平均曲率流の研究。著書・論文・研究集会情報。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="name">小池直之</span>
+      <span class="romaji">Naoyuki Koike</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー">☰</button>
+    <nav class="nav">
+      <a href="index.html" class="active">ホーム</a>
+      <a href="research.html">研究内容</a>
+      <a href="publications.html">著書・論文</a>
+      <a href="conferences.html">研究集会</a>
+      <a href="index.html#simulations">シミュレーション</a>
+      <a href="index.html#students">学生の方へ</a>
+      <a href="en/index.html" class="lang">English</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <canvas id="mcf-canvas"></canvas>
+  <div class="hero-inner">
+    <div>
+      <h1>小池直之</h1>
+      <div class="en-name">NAOYUKI KOIKE</div>
+      <div class="fields">
+        <span>微分幾何学</span>
+        <span>位相幾何学</span>
+        <span>幾何解析学</span>
+      </div>
+      <p class="lede">
+        アインシュタインの一般相対性理論とつながりの深い微分幾何学を中心として、
+        位相幾何学・幾何解析学を含む幾何学分野全般を研究しています。
+        主要テーマは対称空間内の部分多様体論、および平均曲率流・逆平均曲率流の研究です。
+      </p>
+      <div class="ids">
+        <a href="https://orcid.org/0000-0002-3065-2961" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://nrid.nii.ac.jp/ja/nrid/1000000281410/" target="_blank" rel="noopener">KAKEN</a>
+        <a href="https://rist.tus.ac.jp/introduction/division/dgns/" target="_blank" rel="noopener">RIST TUS</a>
+      </div>
+    </div>
+    <img class="portrait" src="assets/portrait.jpg" alt="小池直之の写真（2025年7月21日撮影）">
+  </div>
+</div>
+
+<main>
+
+  <!-- ================= お知らせ ================= -->
+  <section class="block" id="news">
+    <div class="section-head">
+      <h2>お知らせ</h2><span class="sub">News</span>
+    </div>
+    <div class="card">
+      <ul class="news-list">
+        <li>
+          <time>2026.05.29</time>
+          <div><span class="tag tag-info">公開</span>研究室所属の大学院生がAIを用いて作成した平均曲率流シミュレーションソフト（<a href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">閉曲線版</a>・<a href="https://nagajin.github.io/mean-curvature-flow/surface3d.html" target="_blank" rel="noopener">閉曲面版</a>）を公開しました。</div>
+        </li>
+        <li>
+          <time>2026.03.18–19</time>
+          <div><span class="tag tag-event">研究集会</span>「結び目理論，幾何学的リー群論，及び，その応用2025」を開催（東京理科大学神楽坂キャンパス 森戸記念館 第一フォーラム）。<a href="https://www.rs.tus.ac.jp/knot/index.html" target="_blank" rel="noopener">研究集会のサイト</a></div>
+        </li>
+        <li>
+          <time>2025.12.09–10</time>
+          <div><span class="tag tag-event">研究集会</span>「部分多様体幾何とリー群作用2025」を開催（東京理科大学神楽坂キャンパス 森戸記念館 第一フォーラム）。<a href="https://www.rs.tus.ac.jp/kurando.baba/conference/sgla2025_ja.html" target="_blank" rel="noopener">研究集会のホームページ</a></div>
+        </li>
+        <li>
+          <time>2025.11.22–24</time>
+          <div><span class="tag tag-event">研究集会</span>OCAMI conference "Submanifold Geometry, Lie Group Action and Its Applications to Theoretical Physics 2025"（大阪公立大学杉本キャンパス）。<a href="https://www.rs.tus.ac.jp/kurando.baba/conference/app-sgla2025_ja.html" target="_blank" rel="noopener">研究集会のホームページ</a></div>
+        </li>
+        <li>
+          <time>2025.04.03</time>
+          <div><span class="tag tag-book">著書</span>『位相空間の道標 −基礎から位相不変量まで−』（共立出版）が発売されました。<a href="https://www.kyoritsu-pub.co.jp/book/b10131191.html" target="_blank" rel="noopener">出版社サイト</a></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 研究内容 ================= -->
+  <section class="block" id="research">
+    <div class="section-head">
+      <h2>研究内容</h2><span class="sub">Research</span>
+    </div>
+    <p style="max-width:800px; margin-bottom:26px;">
+      主に対称空間内の部分多様体論を研究しています。微分幾何学は、位相幾何学・解析学・代数学・確率論など
+      数学のすべての分野、さらに物理数学とも深い関わりをもっています。ポアンカレ予想の解決に用いられた
+      リッチ流と密接な関係にある<strong>平均曲率流</strong>は、その代表的な研究対象です。
+    </p>
+    <div class="grid-2">
+      <div class="card theme-card">
+        <div class="num">1</div>
+        <h3>コンパクト型対称空間内の部分多様体の研究</h3>
+        <p>対称空間の歪みを解消して得られる無限次元ヒルベルト空間内の部分多様体の研究に、リーマンサブマージョンを通じて還元して研究します。平坦で絶対平行性をもつ空間に還元できる点が有効です。</p>
+      </div>
+      <div class="card theme-card">
+        <div class="num">2</div>
+        <h3>非コンパクト型対称空間内の部分多様体の研究</h3>
+        <p>部分多様体の複素化（アンチケーラー部分多様体）を、無限次元アンチケーラー空間内の部分多様体の研究に還元して行います。理想境界の彼方に消えている幾何構造が複素化された空間に現れる点が有効です。</p>
+      </div>
+      <div class="card theme-card">
+        <div class="num">3</div>
+        <h3>対称空間内の平均曲率流・逆平均曲率流の研究</h3>
+        <p>部分多様体を平均曲率流方程式・逆平均曲率流方程式に従って変形したとき、どのように崩壊・発散するのか、また修正された方程式の下でどのような良い部分多様体に収束するのかを研究します。</p>
+      </div>
+      <div class="card theme-card">
+        <div class="num">4</div>
+        <h3>手術付き平均曲率流を利用した超曲面のトポロジーの研究</h3>
+        <p>ある種の超曲面を初期データとする手術付き平均曲率流を定義し、その超曲面のトポロジーを研究しています。サーストンの幾何化予想の解決に用いられた手術付きリッチ流の、平均曲率流サイドの概念です。</p>
+      </div>
+    </div>
+    <a class="more-link" href="research.html">研究内容の詳しい解説（平均曲率流とは・一般相対性理論について）</a>
+  </section>
+
+  <!-- ================= 著書 ================= -->
+  <section class="block" id="books">
+    <div class="section-head">
+      <h2>著書</h2><span class="sub">Books</span>
+    </div>
+    <div class="grid-2">
+      <div class="card book-card">
+        <div class="book-cover bc-1">
+          <div class="btitle">位相空間の道標</div>
+          <div class="bsub">− 基礎から位相不変量まで −</div>
+        </div>
+        <div class="meta">共立出版・2025年4月3日発売・280ページ</div>
+        <p class="desc">Signpost of Topological Space — From Foundation to Topological Invariants</p>
+        <div class="links">
+          <a href="https://www.kyoritsu-pub.co.jp/book/b10131191.html" target="_blank" rel="noopener">出版社サイトへ</a>
+        </div>
+      </div>
+      <div class="card book-card">
+        <div class="book-cover bc-2">
+          <div class="btitle">積分公式で啓くベクトル解析と微分幾何学</div>
+          <div class="bsub">− ストークスの定理から変分公式まで −</div>
+        </div>
+        <div class="meta">共立出版・2022年9月12日出版・385ページ（2023年5月 初版第2刷）</div>
+        <p class="desc">Vector Analysis &amp; Differential Geometry Enlightened by Integral Formulas — From Stokes' Theorem to Variational Formula</p>
+        <div class="links">
+          <a href="https://www.kyoritsu-pub.co.jp/book/b10013505.html" target="_blank" rel="noopener">出版社サイトへ</a>
+          <a href="https://www.kyoritsu-pub.co.jp/book/b10013505.html" target="_blank" rel="noopener">正誤表（出版社サイト「関連情報」）</a>
+        </div>
+      </div>
+      <div class="card book-card">
+        <div class="book-cover bc-3">
+          <div class="btitle">理論物理に潜む部分多様体幾何</div>
+          <div class="bsub">− 一般相対性理論・ゲージ理論との関わり −</div>
+        </div>
+        <div class="meta">共立出版・2021年3月9日出版・438ページ（2025年5月 初版第3刷）</div>
+        <p class="desc">擬リーマン部分多様体論、リー群作用の軌道幾何、対称空間論に関する入門書であり、発展的内容やゲージ理論と関わる無限次元部分多様体についても述べた自信作。対称空間論をはじめて学ぶ方に特にお勧めです。</p>
+        <div class="links">
+          <a href="https://www.kyoritsu-pub.co.jp/bookdetail/9784320114401" target="_blank" rel="noopener">出版社サイトへ</a>
+          <a href="publications.html#errata">訂正箇所ファイル</a>
+        </div>
+      </div>
+      <div class="card book-card">
+        <div class="book-cover bc-4">
+          <div class="btitle">平均曲率流</div>
+          <div class="bsub">− 部分多様体の時間発展 −</div>
+        </div>
+        <div class="meta">共立出版・2019年4月10日出版・376ページ（2020年5月 初版第2刷）</div>
+        <p class="desc">Mean curvature flow — Time evolution of submanifolds</p>
+        <div class="links">
+          <a href="https://www.kyoritsu-pub.co.jp/bookdetail/9784320113763" target="_blank" rel="noopener">出版社サイトへ</a>
+        </div>
+      </div>
+    </div>
+    <a class="more-link" href="publications.html">著書・査読付き論文の全リストへ</a>
+  </section>
+
+  <!-- ================= シミュレーション・動画 ================= -->
+  <section class="block" id="simulations">
+    <div class="section-head">
+      <h2>平均曲率流シミュレーション</h2><span class="sub">Simulations &amp; Videos</span>
+    </div>
+    <div class="sim-banner">
+      <div>
+        <h3>研究室発・平均曲率流シミュレータ</h3>
+        <p>研究室に所属する大学院生がAIを用いて作成したシミュレーションソフトです。ブラウザ上で初期曲線・曲面を自由に描いて、平均曲率流による時間発展を観察できます。（2026年5月29日公開）</p>
+      </div>
+      <div class="btns">
+        <a class="btn btn-light" href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">閉曲線を発する平均曲率流</a>
+        <a class="btn btn-ghost" href="https://nagajin.github.io/mean-curvature-flow/surface3d.html" target="_blank" rel="noopener">閉曲面を発する平均曲率流</a>
+      </div>
+    </div>
+
+    <h3 style="margin:34px 0 12px; color:var(--navy); font-size:1.05rem;">平均曲率流の動画（お勧めサイト）</h3>
+    <ul class="video-list">
+      <li><a href="https://www.youtube.com/watch?v=7nNzQekfJFU" target="_blank" rel="noopener">ランダムな閉曲線を発する平均曲率流</a></li>
+      <li><a href="https://www.youtube.com/watch?v=TeuLhhR7UxM" target="_blank" rel="noopener">バットマンシンボルの閉曲線を発する平均曲率流</a></li>
+      <li><a href="https://www.youtube.com/watch?v=ubYZ9IV-3EM" target="_blank" rel="noopener">花形の閉曲線を発する平均曲率流</a></li>
+      <li><a href="https://www.youtube.com/watch?v=GQI1G0FZh1U" target="_blank" rel="noopener">花形の閉曲線と円を発する平均曲率流</a></li>
+      <li><a href="https://www.youtube.com/watch?v=8Ez0QoJ3XG8" target="_blank" rel="noopener">渦巻き状領域の境界を発する平均曲率流</a></li>
+      <li><a href="https://www.youtube.com/watch?v=TbSN00cSXzE" target="_blank" rel="noopener">平均曲率流（等位集合法）</a></li>
+      <li><a href="https://www.youtube.com/watch?v=YhqhuhfEPWQ" target="_blank" rel="noopener">後退平均曲率流（等位集合法）</a></li>
+      <li><a href="https://www.youtube.com/watch?v=yEJ21XoISUM" target="_blank" rel="noopener">錐を発する平均曲率流</a></li>
+      <li><a href="https://www.youtube.com/watch?v=CUSfEsDPbYw" target="_blank" rel="noopener">花びらを発する体積保存平均曲率流</a></li>
+      <li><a href="https://www.youtube.com/watch?v=qUSKByqYYN8" target="_blank" rel="noopener">2つの円を発する体積保存平均曲率流</a></li>
+      <li><a href="http://www.math.utah.edu/~mayer/math/MCF/dumbbell2_js.html" target="_blank" rel="noopener">ダンベル形を発する平均曲率流</a></li>
+      <li><a href="https://www.youtube.com/watch?v=9sfkw8IWkl0" target="_blank" rel="noopener">ポアンカレ予想に関する動画</a></li>
+    </ul>
+  </section>
+
+  <!-- ================= 学生の方へ ================= -->
+  <section class="block" id="students">
+    <div class="section-head">
+      <h2>学生の方へ</h2><span class="sub">For Students</span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="color:var(--navy); margin-bottom:10px;">卒業研究について</h3>
+        <p style="font-size:0.92rem;">2026年度の卒業研究では『理論物理に潜む部分多様体幾何』を読みます。質問のある方はメールでご連絡ください。</p>
+        <div class="links" style="margin-top:12px; font-size:0.88rem;">
+          <a href="https://www.rs.kagu.tus.ac.jp/~koike/sotsu2026.1.10.pdf" target="_blank" rel="noopener">卒研説明会スライド（PDF）</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--navy); margin-bottom:10px;">研究者になろうと思っている方々へ</h3>
+        <p style="font-size:0.92rem;">まずは論理性をしっかりと身に付け、次に初めて学ぶことを俊敏に正確に理解する力、さらに未解決の問題等を解決する独創的な力を磨いてほしいと思います。理屈だけでできることはたかが知れています。未解決の問題を解決するためには、<strong>解明したいという情熱</strong>が必要です。</p>
+      </div>
+    </div>
+    <div class="quote">
+      <div class="qtitle">問題のベターな解答法、定理のベターな証明法について</div>
+      「長いが突飛な発想を必要としない証明」と「短いが突飛な発想を必要とする証明」があったとして、教育的には前者がベターであると考えています。一方、総合的には、どちらの証明が定理の内容の本質を分からせてくれるかを比較して決めるべきであると考えています。
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong style="color:#fff;">小池直之 / Naoyuki Koike</strong><br>
+      微分幾何学・位相幾何学・幾何解析学<br>
+      <a href="https://rist.tus.ac.jp/introduction/division/dgns/" target="_blank" rel="noopener">東京理科大学研究推進機構 総合研究院 幾何学と自然科学融合研究部門</a>
+    </div>
+    <div class="footer-ids">
+      <a href="https://orcid.org/0000-0002-3065-2961" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://nrid.nii.ac.jp/ja/nrid/1000000281410/" target="_blank" rel="noopener">KAKEN</a>
+      <a href="en/index.html">English</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
