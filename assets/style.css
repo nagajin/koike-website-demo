@@ -232,6 +232,17 @@ section.block { padding-top: 64px; }
   font-size: 0.9rem; margin: 18px 0;
 }
 
+/* ---------- 数式（MathJax / SVG出力） ---------- */
+/* 別行立ての数式が狭い画面でページごと横スクロールさせないよう、数式内で完結させる */
+mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 4px 0;
+}
+/* 行中の数式は和文の行送りを崩さない範囲で少し余白を取る */
+mjx-container:not([display="true"]) { margin: 0 0.15em; }
+
 /* ---------- publications ---------- */
 .pub-tools { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
 .pub-tools input {

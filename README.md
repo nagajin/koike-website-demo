@@ -8,6 +8,7 @@
 - **完全静的（HTML/CSS/JS のみ、ビルド不要）** — GitHub Pages で無料ホスティングでき、
   大学サーバーが使えなくなっても URL を維持できる。HTML を直接編集するだけで更新可能。
 - 外部ライブラリ・CDN 依存なし（フォントもシステムフォント）。
+  数式表示の MathJax も `assets/mathjax/` に同梱しており、外部への通信は一切発生しない。
 - レスポンシブ対応（スマホではハンバーガーメニュー）。
 - トップのヒーロー背景は平均曲率流（曲線短縮流）の Canvas アニメーション
   （`assets/main.js` の `startMCF`）。
@@ -23,7 +24,21 @@ en/index.html       英語版（簡易）
 assets/style.css    共通スタイル
 assets/main.js      ナビ開閉・論文検索・MCFアニメーション
 assets/portrait.jpg 近影（現行サイトの 2025年7月21日撮影の写真）
+assets/mathjax/     MathJax v4（SVG出力・単一ファイル同梱）
 ```
+
+## 数式の書き方
+
+`research.html` の `<head>` に MathJax の設定と読み込みが入っている。
+本文中では LaTeX 記法をそのまま書ける。
+
+- 行中の数式：`\( f_t(x) \)`
+- 別行立ての数式：`\[ \mathrm{Ric} - \frac{R}{4}g + \Lambda g = 0 \]`
+- HTML なので、数式内の `<` は `&lt;` と書く（例：`\( 0 \leqq t &lt; T \)`）
+
+他のページで数式を使いたい場合は、`research.html` の `<head>` にある
+MathJax の `<script>` 2つをそのページにもコピーする
+（`en/` 以下など、サブディレクトリの場合はパスを `../assets/mathjax/tex-svg.js` に直す）。
 
 ## ローカル確認
 
