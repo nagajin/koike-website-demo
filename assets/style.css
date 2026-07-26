@@ -232,6 +232,155 @@ section.block { padding-top: 64px; }
   font-size: 0.9rem; margin: 18px 0;
 }
 
+/* ---------- カード型ナビゲーション ---------- */
+a.nav-card { display: block; text-decoration: none; transition: border-color .15s, transform .15s; }
+a.nav-card:hover { border-color: var(--navy); transform: translateY(-2px); }
+a.nav-card h3 { color: var(--navy); margin-bottom: 8px; font-size: 1rem; }
+a.nav-card h3::after { content: " →"; font-weight: 400; }
+a.nav-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.75; }
+
+/* ---------- ギャラリー ---------- */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.gallery figure { margin: 0; }
+.gallery img {
+  width: 100%; height: 180px; object-fit: cover; display: block;
+  border-radius: 5px; background: var(--line);
+}
+.gallery figcaption { margin-top: 7px; font-size: 0.84rem; color: var(--ink); line-height: 1.6; }
+.gallery figcaption .when { display: block; font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+/* ---------- 趣味・自己紹介 ---------- */
+table.favorites { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+table.favorites th, table.favorites td {
+  padding: 11px 14px 11px 0; border-bottom: 1px solid var(--line);
+  text-align: left; vertical-align: top;
+}
+table.favorites th { white-space: nowrap; color: var(--muted); font-weight: 500; width: 1%; }
+table.favorites td .cmt { display: block; margin-top: 3px; font-size: 0.8rem; color: var(--muted); }
+
+ul.karaoke {
+  list-style: none; padding: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 18px;
+}
+ul.karaoke li { padding: 5px 0 5px 16px; position: relative; font-size: 0.9rem; }
+ul.karaoke li::before { content: "♪"; position: absolute; left: 0; color: var(--muted); }
+
+.drama-card h3 .cast { display: block; margin-top: 3px; font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+.essay p { line-height: 2; margin-bottom: 13px; }
+.essay .sub-head { margin-top: 34px; }
+
+/* ---------- セミナー・プロフィール・学生向け ---------- */
+.sub-head {
+  font-size: 0.95rem; color: var(--navy); margin: 26px 0 10px;
+  padding-bottom: 5px; border-bottom: 1px solid var(--line);
+}
+ul.bulleted { list-style: none; }
+ul.bulleted li { padding: 7px 0 7px 18px; position: relative; border-bottom: 1px solid var(--line); }
+ul.bulleted li::before { content: "—"; position: absolute; left: 0; color: var(--muted); }
+ul.bulleted li:last-child { border-bottom: none; }
+.link-list li a { color: var(--navy); }
+.muted-note { color: var(--muted); font-size: 0.84rem; }
+
+.seminar-session .talk { padding: 14px 0; border-top: 1px solid var(--line); }
+.seminar-session .talk:first-of-type { border-top: none; }
+.talk-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+.talk-head .t { color: var(--muted); font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+.talk-head strong { color: var(--navy); }
+.talk-head .aff { color: var(--muted); font-size: 0.8rem; }
+.talk-title { margin-top: 4px; font-size: 0.95rem; }
+.abstract {
+  margin-top: 9px; padding: 12px 14px; background: var(--bg);
+  border-radius: 4px; font-size: 0.85rem; line-height: 1.85; color: #3a4252;
+}
+.abstract .lbl {
+  display: block; margin-bottom: 5px; font-size: 0.72rem;
+  font-weight: 600; color: var(--muted); letter-spacing: 0.06em;
+}
+
+table.grants { width: 100%; border-collapse: collapse; font-size: 0.89rem; }
+table.grants td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.grants td.t { white-space: nowrap; color: var(--muted); width: 1%; font-variant-numeric: tabular-nums; }
+table.grants td.k { white-space: nowrap; color: var(--navy); font-weight: 600; width: 1%; }
+table.grants td .aff { display: block; margin-top: 3px; font-size: 0.8rem; color: var(--muted); }
+
+.message-card p { margin-bottom: 12px; line-height: 1.95; }
+.message-card .signed { margin-top: 14px; font-size: 0.78rem; color: var(--muted); text-align: right; }
+
+/* ---------- 研究集会ハブ ---------- */
+.lede-sm { font-size: 0.92rem; color: var(--muted); margin-bottom: 20px; line-height: 1.8; }
+.en-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+.en-sub .span, .year-block h2 .span {
+  margin-left: 10px; padding: 1px 8px; background: var(--line);
+  border-radius: 10px; font-size: 0.72rem; color: var(--muted); font-weight: 500;
+}
+.year-block h2 .span { vertical-align: middle; }
+
+.year-jump { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+.year-jump a {
+  padding: 4px 11px; border: 1px solid var(--line); border-radius: 14px;
+  font-size: 0.8rem; color: var(--muted); text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+.year-jump a:hover { border-color: var(--navy); color: var(--navy); background: #fff; }
+
+.tag {
+  display: inline-block; margin-right: 8px; padding: 2px 8px;
+  font-size: 0.7rem; border-radius: 3px; font-weight: 600; vertical-align: middle;
+}
+.conf-card .links a.primary {
+  font-weight: 600; color: var(--navy);
+}
+.conf-card .links a.primary::after { content: " →"; }
+
+/* ---------- 研究集会アーカイブ ---------- */
+.back-link {
+  display: inline-block; margin-bottom: 20px; font-size: 0.88rem;
+  color: var(--muted); text-decoration: none;
+}
+.back-link:hover { color: var(--navy); }
+
+ul.plain { list-style: none; padding: 0; margin: 0; }
+ul.plain li { padding: 3px 0; font-size: 0.9rem; color: var(--ink); }
+
+.day { margin-bottom: 30px; }
+.day h3 {
+  font-size: 1rem; color: var(--navy); margin-bottom: 10px;
+  padding-bottom: 6px; border-bottom: 2px solid var(--line);
+}
+
+/* プログラム表は狭い画面で表だけ横スクロールさせる */
+table.program {
+  width: 100%; border-collapse: collapse; font-size: 0.88rem;
+  display: block; overflow-x: auto;
+}
+table.program td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.program td.t { white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; width: 1%; }
+table.program td.who { white-space: nowrap; width: 1%; }
+table.program td.who strong { font-weight: 600; color: var(--navy); }
+table.program td.who .aff { display: block; font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+table.program td.ti { line-height: 1.55; }
+table.program td.social { color: var(--muted); font-style: italic; }
+a.slide {
+  display: inline-block; margin-left: 8px; padding: 1px 7px;
+  font-size: 0.72rem; border: 1px solid var(--line); border-radius: 3px;
+  color: var(--muted); text-decoration: none; white-space: nowrap;
+}
+a.slide:hover { border-color: var(--navy); color: var(--navy); }
+
+.kind, .room {
+  display: inline-block; margin-right: 6px; padding: 1px 6px;
+  font-size: 0.7rem; border-radius: 3px; font-weight: 600;
+}
+.kind { background: var(--navy); color: #fff; }
+.room { background: var(--line); color: var(--muted); }
+
+.photo-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px;
+}
+.photo-grid img {
+  width: 100%; height: 140px; object-fit: cover; border-radius: 4px; display: block;
+}
+
 /* ---------- 数式（MathJax / SVG出力） ---------- */
 /* 別行立ての数式が狭い画面でページごと横スクロールさせないよう、数式内で完結させる */
 mjx-container[display="true"] {

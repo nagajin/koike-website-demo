@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 仮公開のため検索エンジンへの登録を拒否。本番公開時に削除すること。 -->
+<meta name="robots" content="noindex, nofollow">
+<title>学生の方へ | 小池直之 — Naoyuki Koike</title>
+<meta name="description" content="卒業研究の案内、平均曲率流の解説、および学生の方々へのメッセージ。">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  // MathJax は assets/mathjax/ に同梱（SVG出力・外部リクエストなし）。
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'], ignoreHtmlClass: 'no-mathjax' },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script defer src="assets/mathjax/tex-svg.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="name">小池直之</span>
+      <span class="romaji">Naoyuki Koike</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー">☰</button>
+    <nav class="nav">
+      <a href="index.html">ホーム</a>
+      <a href="research.html">研究内容</a>
+      <a href="publications.html">著書・論文</a>
+      <a href="conferences.html">研究集会</a>
+      <a href="seminars.html">セミナー・講義</a>
+      <a href="students.html" class="active">学生の方へ</a>
+      <a href="about.html">プロフィール</a>
+      <a href="en/index.html" class="lang">English</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-title">
+  <div class="inner">
+    <h1>学生の方へ</h1>
+    <div class="sub">For Students</div>
+  </div>
+</div>
+
+<main>
+<section class="block" style="padding-top:44px;">
+  <div class="section-head"><h2>卒業研究</h2><span class="sub">Undergraduate Research</span></div>
+
+  <div class="card conf-card">
+    <h3>2026年度 卒業研究</h3>
+    <p>『理論物理に潜む部分多様体幾何』（共立出版）を読みます。</p>
+    <div class="links"><a href="assets/talks/sotsu2026.1.10.pdf">卒研説明会で使用したスライド（PDF）</a></div>
+  </div>
+
+  <div class="card conf-card">
+    <h3>2021年度 卒業研究</h3>
+    <p>使用する教科書は『平均曲率流 — 部分多様体の時間発展』（共立出版）に決定しました。
+    質問のある方はメールでご連絡ください。お答えします。</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="section-head"><h2>平均曲率流とは</h2><span class="sub">For Students</span></div>
+  <div class="prose">
+    <p>
+      平均曲率流とはどのようなものであるかを、ユークリッド空間内の曲面を例にとって説明します。
+      一言で述べると、平均曲率流とは、初期データとして選んだユークリッド空間内の曲面 \(S_0\) を、
+      平均曲率ベクトル場（単位法ベクトル場の平均曲率倍）の方向へ変形していくことにより得られる
+      曲面の族 \(\{S_t\}_{0 \leqq t &lt; T}\) のことです。
+    </p>
+    <p>
+      平均曲率流を用いた興味深い研究方法を一つ紹介します。ある良い性質＊をもつ曲面の存在を示すために、
+      まず、既に存在が保証されているある程度良い性質をもつ曲面を \(S_0\) として選びます。次に \(S_0\) を発する
+      平均曲率流 \(\{S_t\}_{0 \leqq t &lt; T}\) が \(T = \infty\) まで存在することを示し、さらに
+      \(t \to \infty\) のとき \(S_t\) が求めたい良い性質＊をもつ曲面に収束することを示します。
+      その結果、良い性質＊をもつ曲面の存在が示されるという方法です。
+    </p>
+    <p>
+      分野としては微分幾何学と偏微分方程式論の狭間の分野であり、平均曲率流はポアンカレ予想の解決に
+      用いられたリッチ流と密接な関係にあります。7つのミレニアム懸賞問題の一つである3次元ポアンカレ予想は、
+      2002年にペレルマンによって解決されました。その解決に用いられたのがリッチ流方程式とよばれる
+      擬放物型非線形発展方程式の解の研究です。一方、私の研究している平均曲率流方程式も、
+      リッチ流方程式と同種の擬放物型非線形偏微分方程式です。
+    </p>
+    <p class="note">
+      シンプルな例：\(M\) が円周で \((N, g)\) が2次元ユークリッド平面、初期図形が楕円の境界線の場合、
+      これを発する平均曲率流は小さく、かつ、まん丸くなりながら1点に崩壊します。
+      <a href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">研究室発のシミュレータ</a>
+      でその様子を観察できます。
+    </p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="section-head"><h2>学生の方々へのメッセージ</h2><span class="sub">Messages</span></div>
+
+  <div class="card message-card">
+    <h3>問題のベターな解答法、定理のベターな証明法について</h3>
+    <p>
+      問題のベターな解答法、定理のベターな証明法とはどのようなものであるか、私の意見を書かせていただきます。
+      ある定理において、「長いが突飛な発想を必要としない証明」と「短いが突飛な発想を必要とする証明」があったとして、
+      どちらがベターであるか。私としましては、教育的には前者がベターであると考えております。
+    </p>
+    <p>
+      その証明において背理法が使われているから良くないとか、手法的なことはあまり関係ないと思います。
+      背理法的な考えは、普段の生活において無意識に本能で使っているぐらいです。
+      ただし、無駄に背理法を使うことは避けた方がいいと思います。
+    </p>
+    <p>
+      一方、（教育的ということを忘れて）総合的には、2つの証明を比較してどちらの証明が定理の内容の本質を
+      分からせてくれるか、といったことを比較することにより、どちらの証明がベターであるかを決めるべきであると
+      考えております。
+    </p>
+    <p class="signed">公開日：2015年10月1日</p>
+  </div>
+
+  <div class="card message-card">
+    <h3>研究者になろうと思っている方々へ</h3>
+    <p>
+      これから研究者になろうと思っている方々にアドバイスをします。まずは、論理性をしっかりと身に付け、
+      次に初めて学ぶことを俊敏に正確に理解する力、さらに未解決の問題等を解決する独創的な力を
+      磨いてほしいと思います。
+    </p>
+    <p>
+      理屈だけでできることはたかが知れています。未解決の問題等を解決するためには、
+      解明したいという情熱が必要です。
+    </p>
+    <p class="signed">公開日：2018年4月23日</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="section-head"><h2>講演資料</h2><span class="sub">Talk Materials</span></div>
+  <p class="lede-sm">日本数学会2011年度会（3月）の一般講演で使用する予定であった資料です。</p>
+  <div class="links">
+    <a href="assets/talks/ga11-31.pdf">一般講演 資料1（PDF）</a>
+    <a href="assets/talks/ga11-32.pdf">一般講演 資料2（PDF）</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong style="color:#fff;">小池直之 / Naoyuki Koike</strong><br>
+      微分幾何学・位相幾何学・幾何解析学
+    </div>
+    <div class="footer-ids">
+      <a href="https://orcid.org/0000-0002-3065-2961" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://nrid.nii.ac.jp/ja/nrid/1000000281410/" target="_blank" rel="noopener">KAKEN</a>
+      <a href="en/index.html">English</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
