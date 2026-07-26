@@ -51,12 +51,19 @@ a:hover { text-decoration: underline; }
 }
 .brand { display: flex; align-items: baseline; gap: 10px; color: #fff; }
 .brand:hover { text-decoration: none; }
-.brand .name { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; }
-.brand .romaji { font-size: 0.72rem; color: #9fb0d8; letter-spacing: 0.12em; text-transform: uppercase; }
+.brand .name { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
+.brand .romaji {
+  font-size: 0.72rem; color: #9fb0d8; letter-spacing: 0.12em;
+  text-transform: uppercase; white-space: nowrap;
+}
+/* サイト名が長いため、ナビが横並びのままだと 1150px 付近で折り返して崩れる。
+   欧文表記は装飾なので、その手前で隠して和文のサイト名だけ残す。 */
+@media (max-width: 1150px) { .brand .romaji { display: none; } }
 
 .nav { display: flex; gap: 4px; align-items: center; }
 .nav a {
   color: #d4ddf2; font-size: 0.88rem; padding: 8px 12px; border-radius: 8px;
+  white-space: nowrap;
 }
 .nav a:hover { background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
 .nav a.active { color: #fff; background: rgba(255,255,255,0.14); }
@@ -67,7 +74,8 @@ a:hover { text-decoration: underline; }
   font-size: 1.5rem; cursor: pointer; padding: 6px 10px;
 }
 
-@media (max-width: 840px) {
+/* ナビ7→8項目とサイト名の長さから、920px を切ると横並びが収まらない */
+@media (max-width: 920px) {
   .nav-toggle { display: block; }
   .nav {
     display: none; position: absolute; top: 62px; left: 0; right: 0;
