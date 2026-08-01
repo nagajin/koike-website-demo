@@ -451,3 +451,42 @@ mjx-container:not([display="true"]) { margin: 0 0.15em; }
 }
 .site-footer a { color: #cdd8f1; }
 .footer-ids { display: flex; gap: 16px; }
+/* ==========================================================
+   印刷（研究集会のプログラムは紙で配られることがある）
+   ========================================================== */
+@media print {
+  /* 画面用の装飾・操作部品は落とす */
+  .site-header, .site-footer, .nav, .nav-toggle,
+  .back-link, .more-link, .year-jump, .hero canvas { display: none !important; }
+
+  body { background: #fff; color: #000; font-size: 10.5pt; line-height: 1.7; }
+  main { max-width: none; padding: 0; }
+  section.block { padding: 0 0 12pt; }
+
+  /* 見出しの直後で改ページさせない */
+  h1, h2, h3 { page-break-after: avoid; break-after: avoid; color: #000; }
+
+  /* カード・講演・1日分のプログラムは途中で切らない */
+  .card, .talk-card, .member-card, .conf-card, .day, figure, tr {
+    page-break-inside: avoid; break-inside: avoid;
+  }
+  .card, .talk-card, .member-card, .conf-card {
+    border: 1px solid #bbb; box-shadow: none; background: #fff;
+  }
+
+  /* 紙ではリンク先が分からないので URL を添える（外部リンクのみ） */
+  a { color: #000; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " <" attr(href) ">";
+    font-size: 8.5pt; color: #555; word-break: break-all;
+  }
+
+  /* 見出し帯は枠線だけにして地色を使わない */
+  .page-title, .hero {
+    background: #fff !important; color: #000 !important;
+    border-bottom: 1.5pt solid #000; padding: 0 0 8pt;
+  }
+  .page-title h1, .page-title .sub, .hero h1, .hero .en-name { color: #000 !important; }
+
+  .abstract, .talk-card .f.abst, .support { background: #f4f4f4; }
+}

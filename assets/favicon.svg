@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 平均曲率流：外側の歪んだ閉曲線が、内側の円へ丸くなりながら縮んでいく様子 -->
+  <rect width="64" height="64" rx="12" fill="#101c3a"/>
+  <path d="M32 11
+           C 45 11, 55 19, 54 30
+           C 53 42, 43 53, 31 53
+           C 19 53, 10 44, 10 32
+           C 10 20, 20 11, 32 11 Z"
+        fill="none" stroke="#5b7fd4" stroke-width="2.4" opacity="0.55"/>
+  <path d="M32 18
+           C 41 18, 47 24, 46.5 31
+           C 46 39, 39 46, 31.5 46
+           C 24 46, 18 40, 18 32
+           C 18 24, 24 18, 32 18 Z"
+        fill="none" stroke="#8fb0ec" stroke-width="2.4" opacity="0.8"/>
+  <circle cx="32" cy="32" r="9.5" fill="none" stroke="#ffffff" stroke-width="2.8"/>
+</svg>
