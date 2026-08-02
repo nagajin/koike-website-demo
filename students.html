@@ -14,7 +14,9 @@
   window.MathJax = {
     tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
     options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'], ignoreHtmlClass: 'no-mathjax' },
-    svg: { fontCache: 'global' }
+    svg: { fontCache: 'global' },
+    // 字形データも同梱。CDN など外部への通信は一切行わない。
+    output: { fontPath: 'assets/mathjax/fonts/%%FONT%%' }
   };
 </script>
 <script defer src="assets/mathjax/tex-svg.js"></script>
