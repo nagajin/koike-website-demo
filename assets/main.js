@@ -94,7 +94,7 @@ function startMCF(canvas) {
       ctx.beginPath();
       curve.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])));
       ctx.closePath();
-      ctx.strokeStyle = `rgba(140, 170, 255, ${0.05 + 0.05 * idx / trail.length})`;
+      ctx.strokeStyle = `rgba(27, 42, 74, ${0.03 + 0.05 * idx / trail.length})`;
       ctx.lineWidth = devicePixelRatio;
       ctx.stroke();
     });
@@ -102,8 +102,8 @@ function startMCF(canvas) {
     ctx.beginPath();
     pts.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])));
     ctx.closePath();
-    ctx.strokeStyle = 'rgba(190, 210, 255, 0.9)';
-    ctx.lineWidth = 1.6 * devicePixelRatio;
+    ctx.strokeStyle = 'rgba(27, 42, 74, 0.45)';
+    ctx.lineWidth = 1.2 * devicePixelRatio;
     ctx.stroke();
   }
 
