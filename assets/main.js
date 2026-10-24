@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (search) {
     const items = Array.from(document.querySelectorAll('#paper-list .pub-list li'));
     const count = document.getElementById('pub-count');
+    // 番号は読み込み時の順で固定する（CSS の連番だと、絞り込むたびに振り直されてしまう）
+    items.forEach((li, i) => { li.dataset.number = String(i + 1); });
     const update = () => {
       const q = search.value.trim().toLowerCase();
       let visible = 0;
