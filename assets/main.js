@@ -22,6 +22,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---------- スクロールで節が現れる・見出しの罫を引く ----------
+  // 読み込み時に画面の中にある節はそのまま見せ（罫だけ引く）、画面の下にある節だけ隠しておいて、
+  // 入ってきたときに浮かび上がらせる。「視差効果を減らす」設定や古いブラウザでは何もしない。
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const blocks = Array.from(document.querySelectorAll('main > section.block'));
+    const title = document.querySelector('.page-title');
+    blocks.forEach(b => { if (b.getBoundingClientRect().top > window.innerHeight) b.classList.add('pending'); });
+    document.documentElement.classList.add('anim');
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      if (e.target.classList.contains('pending')) e.target.classList.replace('pending', 'revealed');
+      e.target.classList.add('drawn');
+      io.unobserve(e.target);
+    }), { rootMargin: '0px 0px -8% 0px' });
+    blocks.forEach(b => io.observe(b));
+    if (title) requestAnimationFrame(() => requestAnimationFrame(() => title.classList.add('drawn')));
+  }
+
   // ---------- 論文リストの絞り込み検索 ----------
   const search = document.getElementById('pub-search');
   if (search) {

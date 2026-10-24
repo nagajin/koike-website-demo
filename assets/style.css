@@ -56,6 +56,50 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* プロフィールの小見出し（見出しの階層は h2、見た目はカード内の小見出し） */
 .profile-heading { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
 
+/* ==========================================================
+   動き（すべて短時間で止まる。「視差効果を減らす」設定では出さず、印刷にも影響しない）
+   ========================================================== */
+@media screen and (prefers-reduced-motion: no-preference) {
+  /* 研究テーマの線画：実線は端から引き、破線はふわっと現す（--i は描く順番） */
+  .theme-fig .stroke { transition: stroke-dashoffset 0.9s ease calc(var(--i) * 0.16s); }
+  .theme-fig .fade { opacity: 0; transition: opacity 0.6s ease calc(var(--i) * 0.16s); }
+  .theme-fig.drawn .stroke { stroke-dashoffset: 0 !important; }
+  .theme-fig.drawn .fade.f-dash { opacity: 0.8; }
+  .theme-fig.drawn .fade.f-axis { opacity: 1; }
+
+  /* 節：画面の下から入ってくるときに、少し浮かび上がって現れる。
+     隠すのは一瞬（.pending に遷移なし）、現れるときだけ遷移する（main.js が .pending を .revealed に替える） */
+  html.anim main > section.block.pending { opacity: 0; transform: translateY(14px); }
+  html.anim main > section.block.revealed { transition: opacity 0.7s ease, transform 0.7s ease; }
+
+  /* 見出しの太罫：左から右へ引く（main.js が .drawn を付ける） */
+  html.anim .section-head, html.anim .page-title .inner { position: relative; border-bottom-color: transparent; }
+  html.anim .section-head::after, html.anim .page-title .inner::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--rule);
+    transform: scaleX(0); transform-origin: left center;
+    transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s;
+  }
+  html.anim .drawn .section-head::after, html.anim .page-title.drawn .inner::after { transform: scaleX(1); }
+
+  /* リンク・カードの小さな反応 */
+  a, .btn, .nav a, a.nav-card, .news-more summary {
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.2s ease, text-decoration-color 0.15s ease;
+  }
+  .more-link::after, .hero-links a::after, a.nav-card h3::after { display: inline-block; transition: transform 0.2s ease; }
+  .more-link:hover::after, .hero-links a:hover::after, a.nav-card:hover h3::after { transform: translateX(4px); }
+  .nav a:hover { border-bottom-color: var(--line); }
+  .nav a.active:hover { border-bottom-color: var(--navy); }
+}
+/* 文章中のリンクの下線：ふだんは薄く、マウスを載せると濃く（下線そのものは常に出す） */
+.prose a, .news-list a, .essay a, .message-card a, .book-card .desc a,
+.theme-card p a, .quote a, .lede-sm a, .card > p a, .abstract a, .note a {
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+.prose a:hover, .news-list a:hover, .essay a:hover, .message-card a:hover, .book-card .desc a:hover,
+.theme-card p a:hover, .quote a:hover, .lede-sm a:hover, .card > p a:hover, .abstract a:hover, .note a:hover {
+  text-decoration-color: currentColor;
+}
+
 /* キーボード操作の現在位置をはっきり示す */
 a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
   outline: 2px solid var(--accent); outline-offset: 3px;
@@ -219,7 +263,7 @@ html[lang="en"] .reading { line-height: 1.65; }
   color: var(--navy); font-weight: 600;
   text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1px;
 }
-.hero-links a::after { content: " →"; font-weight: 400; color: var(--muted); }
+.hero-links a::after { content: "→"; margin-left: 0.35em; font-weight: 400; color: var(--muted); }
 .hero-links a:hover { color: var(--accent); }
 .hero .ids { margin-top: 14px; display: flex; gap: 22px; }
 .hero .ids a {
@@ -311,7 +355,27 @@ section.block { padding-top: 64px; }
 
 /* ---------- research cards ---------- */
 /* 4テーマは枠を外し、番号と上罫で区切る */
-.theme-card { border: none; border-top: 1px solid var(--line); background: none; padding: 18px 0 6px; border-radius: 0; }
+.theme-card {
+  border: none; border-top: 1px solid var(--line); background: none; padding: 18px 0 6px; border-radius: 0;
+  /* 1行目：番号（左下）と線画（右）。見出しと説明文はその下に全幅で（カード間で見出しの高さがそろう） */
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px;
+  align-content: start;   /* 隣のカードに高さを合わせて伸びても、余白を行に配らない */
+}
+.theme-card .num { grid-column: 1; grid-row: 1; align-self: end; }
+.theme-card h3, .theme-card p { grid-column: 1 / -1; }
+
+/* ---------- 研究テーマの線画（描くのは theme-figures.js） ---------- */
+.theme-fig { grid-column: 2; grid-row: 1; width: 144px; height: 101px; margin-bottom: 8px; }
+.theme-fig svg { display: block; width: 100%; height: 100%; overflow: visible; }
+/* 線の太さ・破線の長さは図の座標（viewBox）で決める。vector-effect: non-scaling-stroke を付けると
+   線を引く演出の破線の長さが画面のピクセルで解釈され、拡大表示したときに線の末尾が欠ける */
+.theme-fig path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.theme-fig .f-main   { stroke: var(--navy); stroke-width: 1.2; }
+.theme-fig .f-sub    { stroke: var(--muted); stroke-width: 1; opacity: 0.7; }
+.theme-fig .f-accent { stroke: var(--gold); stroke-width: 1.4; }
+.theme-fig .f-dash   { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.8; }
+.theme-fig .f-axis   { stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 4; }
+@media (max-width: 480px) { .theme-fig { width: 114px; height: 80px; } }
 .theme-card h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; line-height: 1.6; }
 .theme-card .num {
   display: block; color: var(--gold); font-family: var(--font-serif);
@@ -321,7 +385,7 @@ section.block { padding-top: 64px; }
 /* トップの研究紹介など、散文として読ませる段落 */
 .reading { font-family: var(--font-serif); font-size: 1rem; line-height: 1.95; max-width: 800px; margin-bottom: 26px; }
 .more-link { display: inline-block; margin-top: 16px; font-size: 0.88rem; }
-.more-link::after { content: " →"; }
+.more-link::after { content: "→"; margin-left: 0.35em; }
 
 /* ---------- books ---------- */
 .book-card { display: flex; flex-direction: column; }
@@ -404,7 +468,7 @@ section.block { padding-top: 64px; }
 a.nav-card { display: block; text-decoration: none; transition: border-color .15s; }
 a.nav-card:hover { border-color: var(--navy); }
 a.nav-card h3 { color: var(--navy); margin-bottom: 8px; font-size: 1.02rem; font-weight: 600; }
-a.nav-card h3::after { content: " →"; font-weight: 400; color: var(--muted); }
+a.nav-card h3::after { content: "→"; margin-left: 0.35em; font-weight: 400; color: var(--muted); }
 a.nav-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.75; }
 
 /* ---------- ギャラリー ---------- */
@@ -685,4 +749,8 @@ mjx-container:not([display="true"]) { margin: 0 0.15em; }
   /* 論文リストは、画面で絞り込んでいても紙には全件を出す（検索欄と件数は不要） */
   .pub-label, .pub-tools, .pub-count, .skip-link, .news-more summary { display: none !important; }
   #paper-list .pub-list li.hidden { display: block; }
+
+  /* 研究テーマの線画：画面でまだ線を引いていない図も、紙には完成形で出す */
+  .theme-fig path { stroke-dashoffset: 0 !important; opacity: 1 !important; }
+  .theme-fig .f-dash { stroke-dasharray: 3 3 !important; }
 }
