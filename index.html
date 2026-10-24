@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<a class="skip-link" href="#content">本文へ移動</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -18,9 +19,9 @@
       <span class="name">小池直之研究室</span>
       <span class="romaji">Naoyuki Koike Laboratory</span>
     </a>
-    <button class="nav-toggle" aria-label="メニュー">☰</button>
-    <nav class="nav">
-      <a href="index.html" class="home-link active">ホーム</a>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">☰</button>
+    <nav class="nav" id="site-nav" aria-label="主なページ">
+      <a href="index.html" class="home-link active" aria-current="page">ホーム</a>
       <a href="research.html">研究内容</a>
       <a href="publications.html">著書・論文</a>
       <a href="conferences.html">研究集会</a>
@@ -32,18 +33,25 @@
   </div>
 </header>
 
-<div class="hero">
-  <canvas id="mcf-canvas"></canvas>
+<div id="content" class="hero">
+  <canvas id="mcf-canvas" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <div>
       <h1>小池直之研究室</h1>
       <div class="en-name">NAOYUKI KOIKE LABORATORY</div>
+      <!-- 所属・職位。異動や退職のときはこの1行を書き換える -->
+      <p class="affiliation">東京理科大学 理学部第一部 数学科 教授</p>
       <div class="fields">
         <span>微分幾何学</span>
         <span>位相幾何学</span>
         <span>幾何解析学</span>
       </div>
       <p class="lede">アインシュタインの一般相対性理論とつながりの深い微分幾何学を中心として、位相幾何学・幾何解析学を含む幾何学分野全般を研究しています。主要テーマは対称空間内の部分多様体論、および平均曲率流・逆平均曲率流の研究です。</p>
+      <p class="hero-links">
+        <a href="research.html">研究内容</a>
+        <a href="publications.html#paper-list">論文一覧</a>
+        <a href="about.html">プロフィール</a>
+      </p>
       <div class="ids">
         <a href="https://orcid.org/0000-0002-3065-2961" target="_blank" rel="noopener">ORCID</a>
         <a href="https://nrid.nii.ac.jp/ja/nrid/1000000281410/" target="_blank" rel="noopener">KAKEN</a>
@@ -62,6 +70,8 @@
       <h2>お知らせ</h2><span class="sub">News</span>
     </div>
     <div class="card">
+      <!-- 新しいお知らせは先頭に足す。開いて見せるのは最新4件まで。
+           古くなったものは下の「以前のお知らせ」の先頭へ移す。 -->
       <ul class="news-list">
         <li>
           <time>2026.12.07–08</time>
@@ -79,32 +89,37 @@
           <time>2026.08.08</time>
           <div><span class="tag tag-info">公開</span>Open Campus 2026 の研究室見学で補助的に使用したシミュレーションソフト「<a href="https://nagajin.github.io/differential-geometry-demos/open-campus.html" target="_blank" rel="noopener">曲面上の三角形の内角の和と面積（ガウス・ボンネの定理）</a>」を公開しました。</div>
         </li>
-        <li>
-          <time>2026.05.28–06.11</time>
-          <div><span class="tag tag-info">集中講義</span>東京都立大学にて平均曲率流について集中講義を行いました（5月28日・6月4日・6月11日，計6コマ）。</div>
-        </li>
-        <li>
-          <time>2026.05.29</time>
-          <div><span class="tag tag-info">公開</span>研究室所属の大学院生がAIを用いて作成した平均曲率流シミュレーションソフト（<a href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">閉曲線版</a>・<a href="https://nagajin.github.io/mean-curvature-flow/surface3d.html" target="_blank" rel="noopener">閉曲面版</a>）を公開しました。</div>
-        </li>
-        <li>
-          <time>2026.03.18–19</time>
-          <div><span class="tag tag-event">研究集会</span>「結び目理論，幾何学的リー群論，及び，その応用2025」を開催（東京理科大学神楽坂キャンパス 森戸記念館 第一フォーラム）。<a href="https://www.rs.tus.ac.jp/knot/index.html" target="_blank" rel="noopener">研究集会のサイト</a></div>
-        </li>
-        <li>
-          <time>2025.12.09–10</time>
-          <div><span class="tag tag-event">研究集会</span>「部分多様体幾何とリー群作用2025」を開催（東京理科大学神楽坂キャンパス 森戸記念館 第一フォーラム）。<a href="https://www.rs.tus.ac.jp/kurando.baba/conference/sgla2025_ja.html" target="_blank" rel="noopener">研究集会のホームページ</a></div>
-        </li>
-        <li>
-          <time>2025.11.22–24</time>
-          <div><span class="tag tag-event">研究集会</span>OCAMI conference "Submanifold Geometry, Lie Group Action and Its Applications to Theoretical Physics 2025"（大阪公立大学杉本キャンパス）。<a href="https://www.rs.tus.ac.jp/kurando.baba/conference/app-sgla2025_ja.html" target="_blank" rel="noopener">研究集会のホームページ</a></div>
-        </li>
-        <li>
-          <time>2025.04.03</time>
-          <div><span class="tag tag-book">著書</span>『位相空間の道標 −基礎から位相不変量まで−』（共立出版）が発売されました。<a href="https://www.kyoritsu-pub.co.jp/book/b10131191.html" target="_blank" rel="noopener">出版社サイト</a></div>
-        </li>
       </ul>
-      <a class="more-link" href="conferences.html">2014年度からの活動記録をすべて見る</a>
+      <details class="news-more">
+        <summary>以前のお知らせ</summary>
+        <ul class="news-list">
+          <li>
+            <time>2026.05.28–06.11</time>
+            <div><span class="tag tag-info">集中講義</span>東京都立大学にて平均曲率流について集中講義を行いました（5月28日・6月4日・6月11日，計6コマ）。</div>
+          </li>
+          <li>
+            <time>2026.05.29</time>
+            <div><span class="tag tag-info">公開</span>研究室所属の大学院生がAIを用いて作成した平均曲率流シミュレーションソフト（<a href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">閉曲線版</a>・<a href="https://nagajin.github.io/mean-curvature-flow/surface3d.html" target="_blank" rel="noopener">閉曲面版</a>）を公開しました。</div>
+          </li>
+          <li>
+            <time>2026.03.18–19</time>
+            <div><span class="tag tag-event">研究集会</span>「結び目理論，幾何学的リー群論，及び，その応用2025」を開催（東京理科大学神楽坂キャンパス 森戸記念館 第一フォーラム）。<a href="https://www.rs.tus.ac.jp/knot/index.html" target="_blank" rel="noopener">研究集会のサイト</a></div>
+          </li>
+          <li>
+            <time>2025.12.09–10</time>
+            <div><span class="tag tag-event">研究集会</span>「部分多様体幾何とリー群作用2025」を開催（東京理科大学神楽坂キャンパス 森戸記念館 第一フォーラム）。<a href="https://www.rs.tus.ac.jp/kurando.baba/conference/sgla2025_ja.html" target="_blank" rel="noopener">研究集会のホームページ</a></div>
+          </li>
+          <li>
+            <time>2025.11.22–24</time>
+            <div><span class="tag tag-event">研究集会</span>OCAMI conference "Submanifold Geometry, Lie Group Action and Its Applications to Theoretical Physics 2025"（大阪公立大学杉本キャンパス）。<a href="https://www.rs.tus.ac.jp/kurando.baba/conference/app-sgla2025_ja.html" target="_blank" rel="noopener">研究集会のホームページ</a></div>
+          </li>
+          <li>
+            <time>2025.04.03</time>
+            <div><span class="tag tag-book">著書</span>『位相空間の道標 −基礎から位相不変量まで−』（共立出版）が発売されました。<a href="https://www.kyoritsu-pub.co.jp/book/b10131191.html" target="_blank" rel="noopener">出版社サイト</a></div>
+          </li>
+        </ul>
+      </details>
+      <a class="more-link" href="conferences.html">研究集会・講演の年度別記録（2014年度〜）</a>
     </div>
   </section>
 

@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -18,9 +19,9 @@
       <span class="name">Naoyuki Koike Laboratory</span>
       <span class="romaji">小池直之研究室</span>
     </a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
-    <nav class="nav">
-      <a href="index.html" class="active">Home</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">☰</button>
+    <nav class="nav" id="site-nav" aria-label="Main pages">
+      <a href="index.html" class="active" aria-current="page">Home</a>
       <a href="../research.html">Research</a>
       <a href="../publications.html">Publications</a>
       <a href="../conferences.html">Conferences</a>
@@ -31,8 +32,8 @@
   </div>
 </header>
 
-<div class="hero">
-  <canvas id="mcf-canvas"></canvas>
+<div id="content" class="hero">
+  <canvas id="mcf-canvas" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <div>
       <h1>Naoyuki Koike Laboratory</h1>

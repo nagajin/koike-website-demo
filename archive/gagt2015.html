@@ -12,6 +12,7 @@
 
 </head>
 <body>
+<a class="skip-link" href="#content">本文へ移動</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -19,12 +20,12 @@
       <span class="name">小池直之研究室</span>
       <span class="romaji">Naoyuki Koike Laboratory</span>
     </a>
-    <button class="nav-toggle" aria-label="メニュー">☰</button>
-    <nav class="nav">
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">☰</button>
+    <nav class="nav" id="site-nav" aria-label="主なページ">
       <a href="../index.html" class="home-link">ホーム</a>
       <a href="../research.html">研究内容</a>
       <a href="../publications.html">著書・論文</a>
-      <a href="../conferences.html" class="active">研究集会</a>
+      <a href="../conferences.html" class="active" aria-current="page">研究集会</a>
       <a href="../seminars.html">セミナー</a>
       <a href="../students.html">学生の方へ</a>
       <a href="../about.html">プロフィール</a>
@@ -33,7 +34,7 @@
   </div>
 </header>
 
-<div class="page-title">
+<div id="content" class="page-title">
   <div class="inner">
     <h1>Geometric Analysis in Geometry and Topology 2015</h1>
     <div class="sub">幾何学・位相幾何学における幾何解析 2015</div>

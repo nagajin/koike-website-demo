@@ -41,6 +41,24 @@ img { max-width: 100%; display: block; }
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* 文章の中のリンクは、リンク色と本文色の差 (1.88:1) だけでは見分けにくいので常に下線を引く。
+   ナビ・ボタン・一覧の見出しなど、位置でリンクと分かるものは対象外 */
+.prose a, .news-list a, .essay a, .message-card a, .book-card .desc a,
+.theme-card p a, .quote a, .lede-sm a, .card > p a, .abstract a, .note a {
+  text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px;
+}
+
+/* キーボード操作の現在位置をはっきり示す */
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px;
+}
+/* 「本文へ移動」：ふだんは隠し、Tab キーで最初に現れる */
+.skip-link {
+  position: absolute; left: 12px; top: -48px; z-index: 100;
+  background: var(--navy); color: #fff; padding: 8px 14px; font-size: 0.88rem;
+  border-radius: var(--radius);
+}
+.skip-link:focus { top: 10px; text-decoration: none; }
 
 /* ---------- 明朝の適用範囲 ----------
    見出しと散文を明朝にする。MathJax の数式はもともとセリフなので、
@@ -131,8 +149,16 @@ a.nav-card h3,
   background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
-/* 平均曲率流のアニメーションは背景の細い線画として残す（色は main.js 側） */
-.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.55; }
+/* 曲線短縮流の線画（計算と色は main.js 側）。文章の背後に線が通らないよう右側に限る。
+   スマホでは文章と重なるので出さない */
+.hero canvas {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 46%; height: 100%;
+  opacity: 0.55; pointer-events: none;
+  /* 左端で線が直線的に切れて見えないよう、端だけぼかす */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%);
+  mask-image: linear-gradient(to right, transparent 0, #000 18%);
+}
+@media (max-width: 720px) { .hero canvas { display: none; } }
 .hero-inner {
   position: relative; max-width: var(--maxw); margin: 0 auto;
   padding: 76px 20px 68px;
@@ -146,8 +172,11 @@ a.nav-card h3,
   font-family: var(--font-serif);
   font-size: 0.95rem; color: var(--muted); letter-spacing: 0.2em; margin-top: 6px;
 }
+.hero .affiliation {
+  margin-top: 14px; font-size: 0.95rem; color: var(--ink); letter-spacing: 0.04em;
+}
 .hero .fields {
-  margin-top: 20px; display: flex; flex-wrap: wrap; gap: 0;
+  margin-top: 6px; display: flex; flex-wrap: wrap; gap: 0;
   font-size: 0.9rem; color: var(--navy-2);
 }
 /* 分野は札ではなく、中点で区切った一行として見せる */
@@ -156,7 +185,15 @@ a.nav-card h3,
   margin-top: 22px; color: var(--ink); max-width: 580px; font-size: 1rem; line-height: 2;
   padding-top: 20px; border-top: 1px solid var(--line);
 }
-.hero .ids { margin-top: 20px; display: flex; gap: 22px; }
+/* 主要ページへの導線。下線付きの文字リンクとして、本文より一段強く見せる */
+.hero-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 26px; font-size: 0.95rem; }
+.hero-links a {
+  color: var(--navy); font-weight: 600;
+  text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1px;
+}
+.hero-links a::after { content: " →"; font-weight: 400; color: var(--muted); }
+.hero-links a:hover { color: var(--accent); }
+.hero .ids { margin-top: 14px; display: flex; gap: 22px; }
 .hero .ids a {
   font-size: 0.8rem; letter-spacing: 0.08em; color: var(--accent);
 }
@@ -217,6 +254,12 @@ section.block { padding-top: 64px; }
 @media (max-width: 600px) {
   .news-list li { grid-template-columns: 1fr; gap: 2px; }
 }
+.news-more summary {
+  cursor: pointer; padding: 12px 0; font-size: 0.88rem; color: var(--accent);
+  border-bottom: 1px solid var(--line);
+}
+.news-more summary:hover { text-decoration: underline; }
+.news-more[open] summary { color: var(--muted); }
 
 /* 種別ラベル：塗りのピルではなく、細い枠の角札 */
 .tag {
@@ -226,7 +269,7 @@ section.block { padding-top: 64px; }
   vertical-align: middle; background: none;
 }
 .tag-event { color: var(--accent); }
-.tag-book { color: var(--gold); }
+.tag-book { color: #826528; }   /* 金色 (--gold) は 3.89:1 で小さい文字には薄い。これは 5.33:1 */
 .tag-info { color: #3d6b52; }
 
 /* ---------- research cards ---------- */
@@ -481,7 +524,7 @@ mjx-container:not([display="true"]) { margin: 0 0.15em; }
 /* ---------- publications ---------- */
 .pub-tools { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
 .pub-tools input {
-  flex: 1; min-width: 220px; padding: 10px 14px; border: 1px solid var(--line);
+  flex: 1; min-width: 220px; padding: 10px 14px; border: 1px solid #7b8492;
   border-radius: var(--radius); font-size: 0.95rem; font-family: inherit; background: #fff;
 }
 .pub-tools input:focus { outline: 2px solid var(--accent); border-color: transparent; }

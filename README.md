@@ -29,7 +29,7 @@ archive/            過去に主催した研究集会12回のプログラム・�
 assets/style.css    共通スタイル
 assets/main.js      ナビ開閉・論文検索・MCFアニメーション
 assets/portrait.jpg 近影（2025年7月21日撮影）
-assets/mathjax/     MathJax v4（SVG出力・単一ファイル同梱）
+assets/mathjax/     MathJax v4.1.3（SVG出力・字形・数式の読み上げデータまで同梱。説明は同フォルダの README.md）
 assets/files/       『理論物理に潜む部分多様体幾何』訂正PDF等
 assets/talks/       研究集会の講演スライド・集中講義資料（94点）
 assets/photos/      研究室の写真（38点）
@@ -47,7 +47,8 @@ assets/conf-photos/ 研究集会の記録写真（19点）
 
 他のページで数式を使いたい場合は、`research.html` の `<head>` にある
 MathJax の `<script>` 2つをそのページにもコピーする
-（`en/` 以下など、サブディレクトリの場合はパスを `../assets/mathjax/tex-svg.js` に直す）。
+（`en/` 以下など、サブディレクトリの場合は `../assets/mathjax/tex-svg.js` と
+`fontPath` の `../assets/mathjax/fonts/%%FONT%%` の2か所を直す）。
 
 ## ローカル確認
 

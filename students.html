@@ -15,11 +15,9 @@
     tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
     options: {
       skipHtmlTags: ['script','noscript','style','textarea','pre','code'],
-      ignoreHtmlClass: 'no-mathjax',
-      // v4 は既定で読み上げ文を生成するが、その処理は同梱していない
-      // assets/mathjax/sre/ を worker から読みに行くため 404 になる。
-      // このバンドル（tex-svg.js）だけで完結させるので、生成自体を切る。
-      menuOptions: { settings: { enrich: false, speech: false, braille: false } }
+      ignoreHtmlClass: 'no-mathjax'
+      // 数式の読み上げ文（speech / braille）は v4 の既定どおり生成する。
+      // 規則データは assets/mathjax/sre/ に同梱（assets/mathjax/README.md 参照）。
     },
     svg: { fontCache: 'global' },
     // 字形データも同梱。CDN など外部への通信は一切行わない。
@@ -29,6 +27,7 @@
 <script defer src="assets/mathjax/tex-svg.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#content">本文へ移動</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -36,21 +35,21 @@
       <span class="name">小池直之研究室</span>
       <span class="romaji">Naoyuki Koike Laboratory</span>
     </a>
-    <button class="nav-toggle" aria-label="メニュー">☰</button>
-    <nav class="nav">
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">☰</button>
+    <nav class="nav" id="site-nav" aria-label="主なページ">
       <a href="index.html" class="home-link">ホーム</a>
       <a href="research.html">研究内容</a>
       <a href="publications.html">著書・論文</a>
       <a href="conferences.html">研究集会</a>
       <a href="seminars.html">セミナー</a>
-      <a href="students.html" class="active">学生の方へ</a>
+      <a href="students.html" class="active" aria-current="page">学生の方へ</a>
       <a href="about.html">プロフィール</a>
       <a href="en/index.html" class="lang">English</a>
     </nav>
   </div>
 </header>
 
-<div class="page-title">
+<div id="content" class="page-title">
   <div class="inner">
     <h1>学生の方へ</h1>
     <div class="sub">For Students</div>

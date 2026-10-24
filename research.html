@@ -18,11 +18,9 @@
     },
     options: {
       skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-      ignoreHtmlClass: 'no-mathjax',
-      // v4 は既定で読み上げ文を生成するが、その処理は同梱していない
-      // assets/mathjax/sre/ を worker から読みに行くため 404 になる。
-      // このバンドル（tex-svg.js）だけで完結させるので、生成自体を切る。
-      menuOptions: { settings: { enrich: false, speech: false, braille: false } }
+      ignoreHtmlClass: 'no-mathjax'
+      // 数式の読み上げ文（speech / braille）は v4 の既定どおり生成する。
+      // 規則データは assets/mathjax/sre/ に同梱（assets/mathjax/README.md 参照）。
     },
     svg: { fontCache: 'global' },
     // 字形データも同梱。CDN など外部への通信は一切行わない。
@@ -32,6 +30,7 @@
 <script defer src="assets/mathjax/tex-svg.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#content">本文へ移動</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -39,10 +38,10 @@
       <span class="name">小池直之研究室</span>
       <span class="romaji">Naoyuki Koike Laboratory</span>
     </a>
-    <button class="nav-toggle" aria-label="メニュー">☰</button>
-    <nav class="nav">
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">☰</button>
+    <nav class="nav" id="site-nav" aria-label="主なページ">
       <a href="index.html" class="home-link">ホーム</a>
-      <a href="research.html" class="active">研究内容</a>
+      <a href="research.html" class="active" aria-current="page">研究内容</a>
       <a href="publications.html">著書・論文</a>
       <a href="conferences.html">研究集会</a>
       <a href="seminars.html">セミナー</a>
@@ -53,7 +52,7 @@
   </div>
 </header>
 
-<div class="page-title">
+<div id="content" class="page-title">
   <div class="inner">
     <h1>研究内容</h1>
     <div class="sub">Research</div>
@@ -152,9 +151,10 @@
   </p>
   <p class="note">
     シンプルな例：\(M\) が円周で \(E\) が2次元ユークリッド平面、初期図形が楕円の境界線の場合、これを発する平均曲率流は
-    小さく、かつ、まん丸くなりながら1点に崩壊します。トップページの背景アニメーション、および
-    <a href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">研究室発のシミュレータ</a>で
-    その様子を観察できます。
+    小さく、かつ、まん丸くなりながら1点に崩壊します。トップページの背景には、花形の閉曲線を発する流れを
+    数値計算し、囲む面積が初めの約10分の1になるまでの曲線を重ねて描いています。
+    <a href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">研究室発のシミュレータ</a>では、
+    初期曲線を自分で描いてその様子を観察できます。
   </p>
   <p>
     平均曲率流を用いた興味深い研究方法を一つ紹介します。ある良い性質＊をもつ曲面の存在を示すために、まず、
