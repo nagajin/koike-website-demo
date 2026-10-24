@@ -178,6 +178,11 @@ function startMCF(canvas) {
   }
 
   run();
+  // 図をクリックすると、新しい花形からもう一度流す（「視差効果を減らす」設定では何もしない）
+  if (!reduceMotion) {
+    canvas.title = document.documentElement.lang === 'en' ? 'Click to run the flow again' : 'クリックでもう一度流す';
+    canvas.addEventListener('click', run);
+  }
   // 幅が変わったら描き直す（スマホの縦横回転など）。高さだけの変化は無視する。
   let lastW = canvas.clientWidth;
   window.addEventListener('resize', () => {

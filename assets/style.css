@@ -174,12 +174,19 @@ html[lang="en"] .reading { line-height: 1.65; }
    スマホでは文章と重なるので出さない */
 .hero canvas {
   position: absolute; top: 0; right: 0; bottom: 0; width: 46%; height: 100%;
-  opacity: 0.55; pointer-events: none;
+  opacity: 0.55;
+  cursor: crosshair;   /* 図の上だけ十字カーソル。クリックでもう一度流す（main.js） */
   /* 左端で線が直線的に切れて見えないよう、端だけぼかす */
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%);
   mask-image: linear-gradient(to right, transparent 0, #000 18%);
 }
 @media (max-width: 720px) { .hero canvas { display: none; } }
+@media (prefers-reduced-motion: reduce) { .hero canvas { cursor: default; } }   /* 動かさないので操作もしない */
+/* 文字ブロックは図の上に重なっているので、透明な余白はマウスを素通りさせて図に届ける。
+   実際の文字・リンク・写真だけがマウスを受け取る（文字の選択やリンクは今までどおり） */
+.hero-inner { pointer-events: none; }
+.hero-inner > div > *, .hero-inner > .portrait { pointer-events: auto; }
+.hero-inner > div > :not(.lede) { width: fit-content; max-width: 100%; }
 .hero-inner {
   position: relative; max-width: var(--maxw); margin: 0 auto;
   padding: 76px 20px 68px;
