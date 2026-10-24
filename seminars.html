@@ -13,7 +13,14 @@
   // MathJax は assets/mathjax/ に同梱（SVG出力・外部リクエストなし）。
   window.MathJax = {
     tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
-    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'], ignoreHtmlClass: 'no-mathjax' },
+    options: {
+      skipHtmlTags: ['script','noscript','style','textarea','pre','code'],
+      ignoreHtmlClass: 'no-mathjax',
+      // v4 は既定で読み上げ文を生成するが、その処理は同梱していない
+      // assets/mathjax/sre/ を worker から読みに行くため 404 になる。
+      // このバンドル（tex-svg.js）だけで完結させるので、生成自体を切る。
+      menuOptions: { settings: { enrich: false, speech: false, braille: false } }
+    },
     svg: { fontCache: 'global' },
     // 字形データも同梱。CDN など外部への通信は一切行わない。
     output: { fontPath: 'assets/mathjax/fonts/%%FONT%%' }
