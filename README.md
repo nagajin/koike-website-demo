@@ -58,6 +58,15 @@ python3 -m http.server 8141
 
 ## 本番公開の前にすること
 
-1. `robots.txt` を削除する
-2. 全ページの `<meta name="robots" content="noindex, nofollow">` を削除する
-   （各ファイルにコメントで目印を付けてある）
+このフォルダは GitHub のデモ（検索よけ付きの仮公開）と同じ中身。
+
+- **大学サーバ（rs.kagu.tus.ac.jp/~koike/）に WinSCP で上げる本番用**は、
+  `../koike-website-guide/tools/make_lab_site_zip.py` で作る。
+  検索よけと robots.txt・README.md を外し、旧ページ名（List-Publication.html など）の
+  転送用ファイル 39 個を加えて `../koike-website-guide/送付物/koike-website.zip` に書く。
+  ここを直したら、作り直してから先生にお渡しすること。
+- **GitHub Pages ＋ 独自ドメインへ本番として移すとき**は、
+  1. `robots.txt` を削除する
+  2. 全ページの `<meta name="robots" content="noindex, nofollow">` を削除する
+     （各ファイルにコメントで目印を付けてある）
+  3. 移す元は、その時点で先生のお手元にある最新の koike-website フォルダ（大学サーバ用の一式から更新されている）
