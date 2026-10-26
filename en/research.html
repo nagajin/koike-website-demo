@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 仮公開のため検索エンジンへの登録を拒否。本番公開時に削除すること。 -->
+<meta name="robots" content="noindex, nofollow">
+<title>Research | Naoyuki Koike Laboratory</title>
+<meta name="description" content="Research of Naoyuki Koike: submanifold theory in symmetric spaces, mean curvature flow and inverse mean curvature flow, mean curvature flow with surgery, and connections with general relativity.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  // MathJax は assets/mathjax/ に同梱（SVG出力・外部リクエストなし）。
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      ignoreHtmlClass: 'no-mathjax'
+      // 数式の読み上げ文（speech / braille）は v4 の既定どおり生成する。
+      // 規則データは assets/mathjax/sre/ に同梱（assets/mathjax/README.md 参照）。
+    },
+    svg: { fontCache: 'global' },
+    // 字形データも同梱。CDN など外部への通信は一切行わない。en/ 以下なので ../ を付ける
+    output: { fontPath: '../assets/mathjax/fonts/%%FONT%%' }
+  };
+</script>
+<script defer src="../assets/mathjax/tex-svg.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="name">Naoyuki Koike Laboratory</span>
+      <span class="romaji">小池直之研究室</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">☰</button>
+    <nav class="nav" id="site-nav" aria-label="Main pages">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active" aria-current="page">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="conferences.html">Conferences</a>
+      <a href="seminars.html">Seminars</a>
+      <a href="about.html">Profile</a>
+      <a href="../research.html" class="lang">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<div id="content" class="page-title">
+  <div class="inner">
+    <h1>Research</h1>
+    <div class="sub" lang="ja">研究内容</div>
+  </div>
+</div>
+
+<main>
+<div class="prose">
+
+  <h2>Overview</h2>
+  <p>
+    We study geometry broadly, centred on differential geometry, which is closely connected with Einstein's general theory of relativity, and including topology and geometric analysis.
+  </p>
+  <p>
+    Differential geometry is related not only to geometry (differential geometry and topology) but to every field of mathematics, including analysis, algebra, probability and statistics. It is also deeply connected with mathematical physics.
+  </p>
+  <p>
+    As an example, consider its relation to topology and analysis. Thurston's geometrization conjecture, which contains the three-dimensional Poincaré conjecture (a problem of topology and one of the seven Millennium Problems, solved by Perelman in 2002), was resolved using a notion from geometric analysis: the <strong>Ricci flow with surgery</strong>. In the Ricci flow with surgery, a given Riemannian metric is evolved as a solution of a nonlinear weakly parabolic partial differential equation called the Ricci flow equation; when the flow is about to collapse in finite time, a suitable surgery is performed just before the collapse and the evolution is restarted. After finitely many such steps, one arrives at a flow that converges, in infinite time, to a good Riemannian metric.
+  </p>
+  <p>
+    The Ricci flow is closely related to the <strong>mean curvature flow</strong>, which I study. Both the Ricci flow equation and the mean curvature flow equation belong to Hamilton's class of nonlinear weakly parabolic partial differential equations for sections of vector bundles, so the two can be treated in a unified way. On the mean curvature flow side there is a corresponding notion, the mean curvature flow with surgery, which can be used to study the topology of certain hypersurfaces.
+  </p>
+  <p>
+    Besides the Ricci flow and the mean curvature flow, typical geometric flows include the Yamabe flow, the inverse mean curvature flow and the Gauss curvature flow. Their study belongs to geometric analysis, which investigates geometry by analytic methods. In submanifold theory, notions from topology such as Morse theory, singularity theory and cohomology theory are also used in earnest, and today the boundary between differential geometry and topology is disappearing.
+  </p>
+
+  <h2>Main Research Themes</h2>
+
+  <h3>1. Submanifolds in symmetric spaces of compact type</h3>
+  <p class="note">— by reduction to submanifolds in an infinite-dimensional linear space obtained by cancelling the holonomy of the symmetric space —</p>
+  <p>
+    We study submanifolds in a symmetric space of compact type mainly by reducing them, through a Riemannian submersion (something like an orthogonal projection) of an infinite-dimensional Hilbert space onto the symmetric space, to submanifolds in that Hilbert space. This method is effective because, whereas a symmetric space of compact type is curved, the infinite-dimensional Hilbert space is flat and has absolute parallelism.
+  </p>
+
+  <h3>2. Submanifolds in symmetric spaces of non-compact type</h3>
+  <p class="note">— by reduction, through complexification, to submanifolds in an infinite-dimensional linear space obtained by cancelling the holonomy of the complexified symmetric space —</p>
+  <p>
+    We study the complexification of a submanifold (defined as an anti-Kählerian submanifold in an anti-Kählerian symmetric space) by reducing it, through an anti-Kählerian submersion (something like an orthogonal projection preserving the complex structure) of an infinite-dimensional anti-Kählerian space onto the anti-Kählerian symmetric space, to submanifolds in the infinite-dimensional anti-Kählerian space. This method is effective in two respects:
+  </p>
+  <ul>
+    <li>Whereas a symmetric space of non-compact type is curved, the infinite-dimensional anti-Kählerian space is flat and has absolute parallelism.</li>
+    <li>Geometric structures (of the submanifold) that vanish beyond the ideal boundary of the symmetric space of non-compact type appear in the complexified space.</li>
+  </ul>
+
+  <h3>3. Mean curvature flow and inverse mean curvature flow in symmetric spaces</h3>
+  <p>
+    We study how a submanifold in a symmetric space collapses or blows up when it is deformed according to the partial differential equations called the mean curvature flow equation and the inverse mean curvature flow equation. We also study to what kind of good submanifolds it converges when it is deformed according to suitably modified versions of these equations. The mean curvature flow is closely related to the Ricci flow (a deformation of Riemannian metrics) used in the proof of the three-dimensional Poincaré conjecture, which makes it an interesting subject.
+  </p>
+
+  <h3>4. Topology of hypersurfaces via mean curvature flow with surgery</h3>
+  <p>
+    For certain hypersurfaces, we define the mean curvature flow with surgery starting from them and study their topology. Defining the mean curvature flow with surgery starting from such a hypersurface is very difficult, and this is a challenging research theme.
+  </p>
+
+  <h2>What are the mean curvature flow and the inverse mean curvature flow?</h2>
+  <p>
+    Let \(f\) be an immersion of a manifold \(M\) into a Euclidean space \(E\). Its image \(f(M)\) is then a submanifold of \(E\). The <strong>mean curvature flow starting from \(f\)</strong> is a one-parameter family \(f_t\) of immersions of \(M\) into \(E\) with \(f_0 = f\) such that, for each point \(x\) of \(M\), the point \(f_t(x)\) moves, as the time \(t\) increases, in the direction of the mean curvature vector \((H_t)_x\) of the submanifold \(f_t(M)\) at \(x\).
+  </p>
+  <p>
+    The <strong>inverse mean curvature flow starting from \(f\)</strong> is a similar one-parameter family \(f_t\) in which each point \(f_t(x)\) moves, as \(t\) increases, in the direction of the inverse mean curvature vector
+    \(-\dfrac{(H_t)_x}{(H_t)_x \cdot (H_t)_x}\).
+  </p>
+  <p>
+    In particular, when \(M\) is one-dimensional, \(f_t\) is a regular curve in \(E\) and \(H_t\) is its curvature vector
+    \(\kappa_t n_t\) (\(\kappa_t\): the curvature, \(n_t\): the principal normal vector).
+  </p>
+  <p class="note">
+    A simple example: if \(M\) is a circle, \(E\) is the Euclidean plane and the initial curve is an ellipse, the mean curvature flow starting from it shrinks while becoming rounder and rounder, and collapses to a point. The background of the top page shows a numerical computation of the flow starting from a flower-shaped closed curve, with the curves drawn until the enclosed area falls to about one tenth of the initial area.
+    With the <a href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">laboratory's simulator</a> you can draw your own initial curve and watch the flow.
+  </p>
+  <p>
+    Here is one interesting way of using the mean curvature flow. To show the existence of a surface with a certain good property (*), first choose as \(S_0\) a surface whose existence is already guaranteed and which has a reasonably good property. Next, show that the mean curvature flow \(\{S_t\}_{0 \leqq t &lt; T}\) starting from \(S_0\) exists up to \(T = \infty\), and that \(S_t\) converges, as \(t \to \infty\), to a surface with the desired property (*). This proves the existence of a surface with property (*). In this way the mean curvature flow (and other similar curvature flows) is a powerful tool in the study of Riemannian submanifolds.
+  </p>
+
+  <h2>On Einstein's general theory of relativity</h2>
+  <p>The general theory of relativity is a theory of the gravitational field built on the following three principles.</p>
+  <ol>
+    <li><strong>Constancy of the speed of light</strong> — In the absence of gravity, the speed of light is the same in every inertial frame; in the presence of gravity, it is the same in every local inertial frame.</li>
+    <li><strong>Principle of general relativity</strong> — Physical laws must hold for the data observed in any inertial frame.</li>
+    <li><strong>Equivalence principle</strong> — The gravitational mass defined by Newton's law of universal gravitation equals the inertial mass defined by Newton's second law of motion.</li>
+  </ol>
+  <p>
+    In general relativity, time and space should not be considered separately: the theory is developed on four-dimensional spacetime, which combines time (one dimension) and space (three dimensions). This spacetime is defined as a <strong>four-dimensional Lorentzian manifold</strong>
+    \((M, g)\), a notion of differential geometry. Each coordinate chart \((U, \Phi = (x,y,z,t))\) is regarded as an observer, each physical quantity is defined as a tensor field on \(M\), and each physical law is given as a relation among tensor fields.
+  </p>
+  <ul>
+    <li>For the Lorentzian metric \(g\), its Ricci tensor field \(\mathrm{Ric}\) and its scalar curvature \(R\) are defined. In vacuum, Einstein's field equation is given by
+      \[ \mathrm{Ric} - \frac{R}{4}g + \Lambda g = 0 \]
+      (\(\Lambda\): the cosmological constant).</li>
+    <li>The orbit in spacetime \((M, g)\) of a body falling freely under no force other than gravity is a timelike geodesic (a geodesic whose velocity has negative squared length). A geodesic is a curve satisfying \(\nabla_{c'} c' = 0\) (\(\nabla\): the Levi-Civita connection of \(g\)), and \(\nabla_{c'} c' = 0\) means that the motion is uniform.</li>
+    <li>The orbit of a body subject to forces other than gravity is a timelike curve that is not a geodesic.</li>
+    <li>A black hole \(B\) is a maximal region containing a body of huge mass such that nothing, not even light, can get out once it has entered. That is, if \(B'\) denotes the trace of \(B\) in spacetime, every timelike geodesic that enters \(B'\) can never leave \(B'\).</li>
+  </ul>
+  <p class="note">
+    Local inertial frames: an observer falling freely under gravity alone is a timelike geodesic in a non-flat Lorentzian manifold, and a local inertial frame is, roughly speaking, a kind of local coordinate system defined on a sufficiently small tubular neighbourhood of that timelike geodesic \(\gamma\). The tangent space \(T_p M\) is the linear space obtained by making spacetime \(M\) infinitesimal at a point \(p\); it is regarded as Minkowski space, the spacetime without gravity in special relativity. A local inertial frame is constructed by using the exponential map from the tangent space at a point
+    \(\gamma(t)\) of \(\gamma\) into \(M\).
+  </p>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>Naoyuki Koike Laboratory</strong><br>
+      Differential Geometry / Topology / Geometric Analysis
+    </div>
+    <div class="footer-ids">
+      <a href="https://orcid.org/0000-0002-3065-2961" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://nrid.nii.ac.jp/en/nrid/1000000281410/" target="_blank" rel="noopener">KAKEN</a>
+      <a href="../research.html">日本語</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

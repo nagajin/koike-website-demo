@@ -24,7 +24,8 @@ students.html       卒業研究・平均曲率流の解説・学生の方々へ
 about.html          プロフィール・科研費受給歴（10件）・リンク集
 gallery.html        フォトギャラリー（21点）
 hobby.html          自己紹介（プライベート版）・ひとり言
-en/index.html       英語版（簡易）
+en/                 英語版（index / research / publications / conferences / seminars / about の6ページ。
+                    日本語版の各ページの「English」は対応する英語版へ、英語版の「日本語」は対応する日本語版へ）
 archive/            過去に主催した研究集会12回のプログラム・スライド・写真
 assets/style.css    共通スタイル
 assets/main.js      ナビ開閉・論文検索・MCFアニメーション

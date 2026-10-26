@@ -405,6 +405,8 @@ section.block { padding-top: 64px; }
 .bc-5 { background: #7a6332; }
 .book-card .meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
 .book-card .desc { font-family: var(--font-serif); font-size: 0.92rem; flex: 1; }
+/* リンクを並べる欄。間隔なしでくっつかないよう、どこでも横並び＋間隔にする */
+.links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .book-card .links { margin-top: 14px; display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.86rem; }
 
 /* ---------- videos / simulations ---------- */
@@ -539,6 +541,8 @@ table.grants td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line
 table.grants td.t { white-space: nowrap; color: var(--muted); width: 1%; font-variant-numeric: tabular-nums; }
 table.grants td.k { white-space: nowrap; color: var(--navy); font-weight: 600; width: 1%; }
 table.grants td .aff { display: block; margin-top: 3px; font-size: 0.8rem; color: var(--muted); }
+/* 狭い画面では種目名（英語版は "Scientific Research (C)" と長い）と見出しの折り返しを許し、表を画面に収める */
+@media (max-width: 600px) { table.grants td.k, table.grants th { white-space: normal; } }
 
 .message-card p { margin-bottom: 12px; line-height: 2; }
 .message-card .signed { margin-top: 14px; font-size: 0.78rem; color: var(--muted); text-align: right; }
@@ -546,6 +550,7 @@ table.grants td .aff { display: block; margin-top: 3px; font-size: 0.8rem; color
 /* ---------- 研究集会ハブ ---------- */
 .lede-sm { font-size: 0.92rem; color: var(--muted); margin-bottom: 20px; line-height: 1.8; }
 .en-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; font-family: var(--font-serif); font-style: italic; }
+.en-sub [lang="ja"] { font-style: normal; }   /* 英語版で添える和文名は立体のまま */
 .en-sub .span, .year-block h2 .span {
   margin-left: 10px; padding: 0 7px; border: 1px solid var(--line);
   border-radius: var(--radius); font-size: 0.72rem; color: var(--muted); font-weight: 400;
@@ -576,6 +581,8 @@ table.grants td .aff { display: block; margin-top: 3px; font-size: 0.8rem; color
 
 ul.plain { list-style: none; padding: 0; margin: 0; }
 ul.plain li { padding: 3px 0; font-size: 0.9rem; color: var(--ink); }
+/* 「—」付きの箇条書き（.plain と併用）は、記号のぶん字下げを残す（上の padding で消えて記号が文字に重なっていた） */
+ul.plain.bulleted li { padding-left: 18px; }
 
 .day { margin-bottom: 30px; }
 .day h3 {

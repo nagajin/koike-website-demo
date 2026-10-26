@@ -55,7 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
         li.classList.toggle('hidden', !hit);
         if (hit) visible++;
       });
-      if (count) count.textContent = `${visible} 件を表示中（全 ${items.length} 件）`;
+      if (count) count.textContent = document.documentElement.lang === 'en'
+        ? `${visible} of ${items.length} papers shown`
+        : `${visible} 件を表示中（全 ${items.length} 件）`;
     };
     search.addEventListener('input', update);
     update();
