@@ -80,14 +80,16 @@
     リッチ流・平均曲率流以外の代表的な幾何学流としては、Yamabe流、逆平均曲率流、ガウス曲率流等があります。これらは幾何解析学という分野の研究であり、解析学的手法により幾何学を研究するものです。また、部分多様体の研究においては、モース理論、特異点論、コホモロジー理論等の位相幾何学の概念が本格的に用いられ、現在では微分幾何学と位相幾何学の分野の区別はなくなってきています。
   </p>
 
-  <h2>主要研究テーマ</h2>
+  <h2 id="themes">主要研究テーマ</h2>
 
+  <div class="theme-fig" data-fig="submersion" aria-hidden="true"></div>
   <h3>1. コンパクト型対称空間内の部分多様体の研究</h3>
   <p class="note">〜対称空間の歪みを解消して得られる無限次元の線形空間内の部分多様体の研究に還元して〜</p>
   <p>
     コンパクト型対称空間内の部分多様体の研究を、主に、その部分多様体をある無限次元ヒルベルト空間からその対称空間へのリーマンサブマージョン（＝直交射影のようなもの）を通じて、無限次元ヒルベルト空間内の部分多様体の研究に還元して行っています。この研究方法は、コンパクト型対称空間が歪みをもつのに対し、無限次元ヒルベルト空間は歪みがない、つまり平坦であり絶対平行性をもつという面で有効です。
   </p>
 
+  <div class="theme-fig" data-fig="complexification" aria-hidden="true"></div>
   <h3>2. 非コンパクト型対称空間内の部分多様体の研究</h3>
   <p class="note">〜複素化およびその複素化された対称空間の歪みを解消して得られる無限次元の線形空間内の部分多様体の研究に還元して〜</p>
   <p>
@@ -98,11 +100,13 @@
     <li>非コンパクト型対称空間の理想境界の彼方へ消えうせている（その部分多様体の）幾何構造が、複素化された空間に現れる。</li>
   </ul>
 
+  <div class="theme-fig" data-fig="flows" aria-hidden="true"></div>
   <h3>3. 対称空間内の平均曲率流および逆平均曲率流の研究</h3>
   <p>
     対称空間内の部分多様体を、平均曲率流方程式および逆平均曲率流方程式とよばれる偏微分方程式を満たすように変形して行くと、どのように崩壊あるいは発散するのかという研究を行っています。また、それらの偏微分方程式を適切に修正して得られる方程式を満たすように変形していくと、どのような良い部分多様体に収束するのかという研究も行っています。平均曲率流の研究は、3次元ポアンカレ予想の証明に使われたリッチ流（リーマン計量の変形）の研究と密接な関係があり、興味深い研究対象です。
   </p>
 
+  <div class="theme-fig" data-fig="surgery" aria-hidden="true"></div>
   <h3>4. 手術付き平均曲率流を利用した超曲面のトポロジーの研究</h3>
   <p>
     ある種の超曲面に対し、それを初期データとする手術付き平均曲率流を定義し、その超曲面のトポロジーを研究しています。その超曲面を初期データとする手術付き平均曲率流を定義する作業は非常に難しく、挑戦的な研究テーマです。
@@ -131,6 +135,53 @@
     平均曲率流を用いた興味深い研究方法を一つ紹介します。ある良い性質＊をもつ曲面の存在を示すために、まず、既に存在が保証されているある程度良い性質をもつ曲面を \(S_0\) として選びます。次に \(S_0\) を発する平均曲率流 \(\{S_t\}_{0 \leqq t &lt; T}\) が \(T = \infty\) まで存在することを示し、さらに \(t \to \infty\) のとき
     \(S_t\) が求めたい良い性質＊をもつ曲面に収束することを示します。その結果、良い性質＊をもつ曲面の存在が示されるという方法です。このように、平均曲率流（及び、他の類似した曲率流）は、リーマン部分多様体の研究において強力な武器となります。
   </p>
+
+</div>
+
+<!-- ================= シミュレーション・動画（以前はトップページにあった節） ================= -->
+<section class="block" id="simulations">
+  <div class="section-head">
+    <h2>シミュレーションと動画</h2><span class="sub" lang="en">Simulations &amp; Videos</span>
+  </div>
+  <div class="sim-banner">
+    <div>
+      <h3>研究室発・平均曲率流シミュレータ</h3>
+      <p>研究室に所属する大学院生がAIを用いて作成したシミュレーションソフトです。ブラウザ上で初期曲線・曲面を自由に描いて、平均曲率流による時間発展を観察できます。（2026年5月29日公開）</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-light" href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">閉曲線を発する平均曲率流</a>
+      <a class="btn btn-ghost" href="https://nagajin.github.io/mean-curvature-flow/surface3d.html" target="_blank" rel="noopener">閉曲面を発する平均曲率流</a>
+    </div>
+  </div>
+
+  <div class="sim-banner" style="margin-top:16px;">
+    <div>
+      <h3>曲面上の三角形の内角の和と面積</h3>
+      <p>Open Campus 2026 の研究室見学で補助的に使用したシミュレーションソフトです。曲面上に描いた三角形の内角の和と面積の関係（ガウス・ボンネの定理）を観察できます。（2026年8月8日公開）</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-light" href="https://nagajin.github.io/differential-geometry-demos/open-campus.html" target="_blank" rel="noopener">ガウス・ボンネの定理を体験する</a>
+    </div>
+  </div>
+
+  <h3 style="margin:34px 0 12px; color:var(--navy); font-size:1.05rem;">平均曲率流の動画（お勧めサイト）</h3>
+  <ul class="video-list">
+    <li><a href="https://www.youtube.com/watch?v=7nNzQekfJFU" target="_blank" rel="noopener">ランダムな閉曲線を発する平均曲率流</a></li>
+    <li><a href="https://www.youtube.com/watch?v=TeuLhhR7UxM" target="_blank" rel="noopener">バットマンシンボルの閉曲線を発する平均曲率流</a></li>
+    <li><a href="https://www.youtube.com/watch?v=ubYZ9IV-3EM" target="_blank" rel="noopener">花形の閉曲線を発する平均曲率流</a></li>
+    <li><a href="https://www.youtube.com/watch?v=GQI1G0FZh1U" target="_blank" rel="noopener">花形の閉曲線と円を発する平均曲率流</a></li>
+    <li><a href="https://www.youtube.com/watch?v=8Ez0QoJ3XG8" target="_blank" rel="noopener">渦巻き状領域の境界を発する平均曲率流</a></li>
+    <li><a href="https://www.youtube.com/watch?v=TbSN00cSXzE" target="_blank" rel="noopener">平均曲率流（等位集合法）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=YhqhuhfEPWQ" target="_blank" rel="noopener">後退平均曲率流（等位集合法）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=yEJ21XoISUM" target="_blank" rel="noopener">錐を発する平均曲率流</a></li>
+    <li><a href="https://www.youtube.com/watch?v=CUSfEsDPbYw" target="_blank" rel="noopener">花びらを発する体積保存平均曲率流</a></li>
+    <li><a href="https://www.youtube.com/watch?v=qUSKByqYYN8" target="_blank" rel="noopener">2つの円を発する体積保存平均曲率流</a></li>
+    <li><a href="http://www.math.utah.edu/~mayer/math/MCF/dumbbell2_js.html" target="_blank" rel="noopener">ダンベル形を発する平均曲率流</a></li>
+    <li><a href="https://www.youtube.com/watch?v=9sfkw8IWkl0" target="_blank" rel="noopener">ポアンカレ予想に関する動画</a></li>
+  </ul>
+</section>
+
+<div class="prose">
 
   <h2>アインシュタインの一般相対性理論について</h2>
   <p>一般相対性理論とは、次の3つの原理に基づいて構築された重力場理論です。</p>
@@ -175,5 +226,7 @@
 </footer>
 
 <script src="assets/main.js"></script>
+<!-- 研究テーマの線画（data-fig の名前と図の対応は theme-figures.js の冒頭） -->
+<script src="assets/theme-figures.js"></script>
 </body>
 </html>

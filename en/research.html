@@ -78,14 +78,16 @@
     Besides the Ricci flow and the mean curvature flow, typical geometric flows include the Yamabe flow, the inverse mean curvature flow and the Gauss curvature flow. Their study belongs to geometric analysis, which investigates geometry by analytic methods. In submanifold theory, notions from topology such as Morse theory, singularity theory and cohomology theory are also used in earnest, and today the boundary between differential geometry and topology is disappearing.
   </p>
 
-  <h2>Main Research Themes</h2>
+  <h2 id="themes">Main Research Themes</h2>
 
+  <div class="theme-fig" data-fig="submersion" aria-hidden="true"></div>
   <h3>1. Submanifolds in symmetric spaces of compact type</h3>
   <p class="note">— by reduction to submanifolds in an infinite-dimensional linear space obtained by cancelling the holonomy of the symmetric space —</p>
   <p>
     We study submanifolds in a symmetric space of compact type mainly by reducing them, through a Riemannian submersion (something like an orthogonal projection) of an infinite-dimensional Hilbert space onto the symmetric space, to submanifolds in that Hilbert space. This method is effective because, whereas a symmetric space of compact type is curved, the infinite-dimensional Hilbert space is flat and has absolute parallelism.
   </p>
 
+  <div class="theme-fig" data-fig="complexification" aria-hidden="true"></div>
   <h3>2. Submanifolds in symmetric spaces of non-compact type</h3>
   <p class="note">— by reduction, through complexification, to submanifolds in an infinite-dimensional linear space obtained by cancelling the holonomy of the complexified symmetric space —</p>
   <p>
@@ -96,11 +98,13 @@
     <li>Geometric structures (of the submanifold) that vanish beyond the ideal boundary of the symmetric space of non-compact type appear in the complexified space.</li>
   </ul>
 
+  <div class="theme-fig" data-fig="flows" aria-hidden="true"></div>
   <h3>3. Mean curvature flow and inverse mean curvature flow in symmetric spaces</h3>
   <p>
     We study how a submanifold in a symmetric space collapses or blows up when it is deformed according to the partial differential equations called the mean curvature flow equation and the inverse mean curvature flow equation. We also study to what kind of good submanifolds it converges when it is deformed according to suitably modified versions of these equations. The mean curvature flow is closely related to the Ricci flow (a deformation of Riemannian metrics) used in the proof of the three-dimensional Poincaré conjecture, which makes it an interesting subject.
   </p>
 
+  <div class="theme-fig" data-fig="surgery" aria-hidden="true"></div>
   <h3>4. Topology of hypersurfaces via mean curvature flow with surgery</h3>
   <p>
     For certain hypersurfaces, we define the mean curvature flow with surgery starting from them and study their topology. Defining the mean curvature flow with surgery starting from such a hypersurface is very difficult, and this is a challenging research theme.
@@ -125,6 +129,27 @@
   <p>
     Here is one interesting way of using the mean curvature flow. To show the existence of a surface with a certain good property (*), first choose as \(S_0\) a surface whose existence is already guaranteed and which has a reasonably good property. Next, show that the mean curvature flow \(\{S_t\}_{0 \leqq t &lt; T}\) starting from \(S_0\) exists up to \(T = \infty\), and that \(S_t\) converges, as \(t \to \infty\), to a surface with the desired property (*). This proves the existence of a surface with property (*). In this way the mean curvature flow (and other similar curvature flows) is a powerful tool in the study of Riemannian submanifolds.
   </p>
+
+</div>
+
+<!-- ================= Simulations（以前は英語版トップにあった節） ================= -->
+<section class="block" id="simulations">
+  <div class="section-head">
+    <h2>Simulations</h2><span class="sub">Mean Curvature Flow</span>
+  </div>
+  <div class="sim-banner">
+    <div>
+      <h3>Interactive mean curvature flow simulators</h3>
+      <p>Browser-based simulators developed with AI by a graduate student in my laboratory (released May 29, 2026).</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-light" href="https://nagajin.github.io/mean-curvature-flow/" target="_blank" rel="noopener">Closed curves</a>
+      <a class="btn btn-ghost" href="https://nagajin.github.io/mean-curvature-flow/surface3d.html" target="_blank" rel="noopener">Closed surfaces</a>
+    </div>
+  </div>
+</section>
+
+<div class="prose">
 
   <h2>On Einstein's general theory of relativity</h2>
   <p>The general theory of relativity is a theory of the gravitational field built on the following three principles.</p>
@@ -168,5 +193,7 @@
 </footer>
 
 <script src="../assets/main.js"></script>
+<!-- 研究テーマの線画（data-fig の名前と図の対応は theme-figures.js の冒頭） -->
+<script src="../assets/theme-figures.js"></script>
 </body>
 </html>
