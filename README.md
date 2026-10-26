@@ -44,7 +44,7 @@ assets/conf-photos/ 研究集会の記録写真（19点）
 読み込みが入っている。本文中では LaTeX 記法をそのまま書ける。
 
 - 行中の数式：`\( f_t(x) \)`
-- 別行立ての数式：`\[ \mathrm{Ric} - \frac{R}{4}g + \Lambda g = 0 \]`
+- 別行立ての数式：`\[ \mathrm{Ric} - \frac{1}{2}R\,g + \Lambda g = 0 \]`
 - HTML なので、数式内の `<` は `&lt;` と書く（例：`\( 0 \leqq t &lt; T \)`）
 
 他のページで数式を使いたい場合は、`research.html` の `<head>` にある
